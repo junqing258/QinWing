@@ -1,0 +1,6 @@
+<resources>
+    <string moduleConfig="true" name="CodePushDeploymentKey">c094cdef0849a00d4bf5ff7563d897ec3836d530</string>
+    <string name="app_name">QinWing</string>
+    <string name="appCenterCrashes_whenToSendCrashes" moduleConfig="true" translatable="false">DO_NOT_ASK_JAVASCRIPT</string>
+    <string name="appCenterAnalytics_whenToEnableAnalytics" moduleConfig="true" translatable="false">ALWAYS_SEND</string>
+</resources>
