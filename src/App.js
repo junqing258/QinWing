@@ -65,6 +65,10 @@ class App extends Component {
     CodePush.allowRestart(); //在加载完了，允许重启
   }
 
+  componentDidUpdate() {
+    console.log('update');
+  }
+
   render() {
     return <AppNavigator />;
   }

@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
   btn: {
     display: 'flex',
     height: 40,
-    paddingLeft: 30,
-    paddingRight: 30,
+    paddingLeft: 10,
+    paddingRight: 10,
     borderRadius: 20,
     backgroundColor: '#07c160',
     justifyContent: 'center',
