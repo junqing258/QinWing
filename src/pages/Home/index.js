@@ -70,7 +70,7 @@ export default class HomeScreen extends Component {
         />
         <View style={styles.btnWrap}>
           <TouchableOpacity style={styles.btn}>
-            <Text style={styles.btnText}> 开始扫描 </Text>
+            <Text style={styles.btnText}> 开始扫描1 </Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.btn}>

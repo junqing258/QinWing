@@ -8,7 +8,9 @@
         "start": "react-native start",
         "test": "jest",
         "lint": "eslint .",
-        "bundle": "react-native bundle --entry-file index.js --bundle-output ./bundles/ios/index.ios.bundle --assets-dest ./bundles/ios/ --platform ios --dev false"
+        "bundle:android": "react-native bundle --platform android --entry-file index.js --bundle-output ./bundles/index.android.bundle --dev false",
+        "bundle:ios": "react-native bundle --entry-file index.js --bundle-output ./bundles/ios/index.ios.bundle --assets-dest ./bundles/ios/ --platform ios --dev false",
+        "publish:android": "code-push release-react QinWingAndroid-1 android  --t 1.0.5 --dev false --d Production --des \"1.优化操作流程\" --m true"
     },
     "dependencies": {
         "appcenter": "2.6.1",

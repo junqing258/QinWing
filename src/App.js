@@ -5,7 +5,7 @@
  */
 import CodePush from 'react-native-code-push'; // 引入code-push
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, Alert} from 'react-native';
 
 import {createStackNavigator} from 'react-navigation';
 
@@ -56,7 +56,8 @@ class App extends Component {
     });
   }
 
-  getSnapshotBeforeUpdate() {
+  componentWillMount() {
+    Alert.alert('检测版本');
     CodePush.disallowRestart(); //禁止重启
     this.syncImmediate(); //开始检查更新
   }
