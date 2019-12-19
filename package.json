@@ -10,12 +10,13 @@
         "lint": "eslint .",
         "bundle:android": "react-native bundle --platform android --entry-file index.js --bundle-output ./bundles/index.android.bundle --dev false",
         "bundle:ios": "react-native bundle --entry-file index.js --bundle-output ./bundles/ios/index.ios.bundle --assets-dest ./bundles/ios/ --platform ios --dev false",
-        "publish:android": "code-push release-react QinWingAndroid-1 android  --t 1.0.5 --dev false --d Production --des \"1.优化操作流程\" --m true"
+        "publish:android": "code-push release-react QinWingAndroid android  --t 1.0.2 --dev false --d Production --des \"1.优化操作流程\" --m true"
     },
     "dependencies": {
-        "appcenter": "2.6.1",
-        "appcenter-analytics": "2.6.1",
-        "appcenter-crashes": "2.6.1",
+        "appcenter": "^2.6.1",
+        "appcenter-analytics": "^2.6.1",
+        "appcenter-crashes": "^2.6.1",
+        "appcenter-push": "^2.6.1",
         "react": "16.9.0",
         "react-native": "0.61.5",
         "react-native-code-push": "^6.0.0",
@@ -38,6 +39,6 @@
             "<rootDir>/node_modules/appcenter-analytics/test/AppCenterAnalyticsMock.js",
             "<rootDir>/node_modules/appcenter-crashes/test/AppCenterCrashesMock.js",
             "<rootDir>/node_modules/appcenter-push/test/AppCenterPushMock.js"
-         ]
+        ]
     }
 }
