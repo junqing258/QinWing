@@ -1,5 +1,5 @@
 <resources>
-    <string moduleConfig="true" name="CodePushDeploymentKey">kTcmGHdmJEx3M5n45JXCo_jokO98dfl4qqDg4n</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">xLpSvAy4BGqeHZBJ69QdaAX6FxeS4ksvOXqog</string>
     <string name="app_name">QinWing</string>
     <string name="appCenterCrashes_whenToSendCrashes" moduleConfig="true" translatable="false">DO_NOT_ASK_JAVASCRIPT</string>
     <string name="appCenterAnalytics_whenToEnableAnalytics" moduleConfig="true" translatable="false">ALWAYS_SEND</string>

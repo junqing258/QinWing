@@ -3,20 +3,17 @@
     "version": "0.0.1",
     "private": true,
     "scripts": {
-        "android": "react-native run-android",
+        "android": "react-native run-android --variant=release",
         "ios": "react-native run-ios",
         "start": "react-native start",
         "test": "jest",
         "lint": "eslint .",
         "bundle:android": "react-native bundle --platform android --entry-file index.js --bundle-output ./bundles/index.android.bundle --dev false",
         "bundle:ios": "react-native bundle --entry-file index.js --bundle-output ./bundles/ios/index.ios.bundle --assets-dest ./bundles/ios/ --platform ios --dev false",
-        "publish:android": "code-push release-react QinWingAndroid android  --t 1.0.2 --dev false --d Production --des \"1.优化操作流程\" --m true"
+        "push:android": "code-push release QinWingAndroid ./bundles/index.android.bundle 1.0.0 --deploymentName Production --mandatory true",
+        "publish:android": "code-push release-react QinWingAndroid android --t 1.0.0  --des 优化操作流程2 --m true --d Production"
     },
     "dependencies": {
-        "appcenter": "^2.6.1",
-        "appcenter-analytics": "^2.6.1",
-        "appcenter-crashes": "^2.6.1",
-        "appcenter-push": "^2.6.1",
         "react": "16.9.0",
         "react-native": "0.61.5",
         "react-native-code-push": "^6.0.0",

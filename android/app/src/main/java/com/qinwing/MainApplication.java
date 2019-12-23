@@ -2,22 +2,32 @@ package com.qinwing;
 
 import android.app.Application;
 import android.content.Context;
+
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
-import com.microsoft.codepush.react.CodePush;
-import com.microsoft.appcenter.reactnative.crashes.AppCenterReactNativeCrashesPackage;
-import com.microsoft.appcenter.reactnative.analytics.AppCenterReactNativeAnalyticsPackage;
-import com.microsoft.appcenter.reactnative.appcenter.AppCenterReactNativePackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
+
+// Add CodePush imports
+import com.microsoft.codepush.react.ReactInstanceHolder;
+import com.microsoft.codepush.react.CodePush;
+
+import com.facebook.react.ReactPackage;
+import com.facebook.react.shell.MainPackageConfig;
+import com.facebook.react.shell.MainReactPackage;
+
+import com.facebook.react.shell.MainPackageConfig;
+import com.facebook.react.shell.MainReactPackage;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import java.util.Arrays;
+import java.util.ArrayList;
 
 public class MainApplication extends Application implements ReactApplication {
 
-  private final ReactNativeHost mReactNativeHost =
-      new ReactNativeHost(this) {
+  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
         @Override
         public boolean getUseDeveloperSupport() {
           return BuildConfig.DEBUG;
@@ -25,18 +35,37 @@ public class MainApplication extends Application implements ReactApplication {
 
         @Override
         protected List<ReactPackage> getPackages() {
-          @SuppressWarnings("UnnecessaryLocalVariable")
-          List<ReactPackage> packages = new PackageList(this).getPackages();
+//          List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
-          return packages;
+//          return packages;
+            return Arrays.<ReactPackage>asList(
+                new MainReactPackage(),
+                new CodePush(
+                    BuildConfig.CodePushDeploymentKey,
+                    MainApplication.this,
+                    BuildConfig.DEBUG,
+                    "http://192.168.31.104:3000"
+                )
+            );
         }
+
+//          @Override
+//          public List<ReactPackage> createAdditionalReactPackages() {
+//              return getPackages();
+//          }
+
+          @Override
+          public String getJSBundleFile() {
+              // Override default getJSBundleFile method with the one CodePush is providing
+              return CodePush.getJSBundleFile();
+          }
 
         @Override
         protected String getJSMainModuleName() {
           return "index";
         }
-      };
+  };
 
   @Override
   public ReactNativeHost getReactNativeHost() {
